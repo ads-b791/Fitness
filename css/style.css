@@ -188,16 +188,20 @@ body {
 
 /* ---header start------------------------------------------------------------------------- */
 .header {
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	left: 0;
 	top: 0;
 	z-index: 50;
+	min-height: 58px;
+	transition: transform .3s;
+}
+.header.hide {
+	transform: translateY(-150px);
 }
 .header__inner {
 	max-width: 1340px;
 	padding: 0px 15px;
-	min-height: 58px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -252,6 +256,7 @@ body {
 	position: relative;
 	z-index: 3;
 	background-color: transparent;
+	cursor: pointer;
 }
 .menu__icon span{
 		position: absolute;
@@ -1108,13 +1113,20 @@ body {
 	width: 100%;
 	background-color: #d8ce75;
 	padding: 55px 15px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	row-gap: 120px;
 }
 .menu__icon{
 	display: inline-block;
 }
 .menu__list{
 	flex-direction: column;
-	row-gap: 15px;
+	row-gap: 25px;
+}
+.menu__link{
+	font-size: 28px;
 }
 .menu__body._active{
 left: 0;
